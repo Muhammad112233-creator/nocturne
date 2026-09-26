@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080a11" />
+    <meta
+      name="description"
+      content="Nocturne Archive — a six-part digital exhibition template."
+    />
+    <title>Nocturne Archive — Digital Exhibition</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-aura" aria-hidden="true"></div>
+    <div class="dust" aria-hidden="true"></div>
+
+    <header class="chrome chrome-top" aria-label="Exhibition controls">
+      <button
+        class="brand"
+        id="brand-home"
+        type="button"
+        aria-label="Return to introduction"
+      >
+        <span>NOCTURNE</span>
+        <small data-i18n="brandSub">The slow archive — six studies</small>
+      </button>
+      <div class="top-controls">
+        <div class="language-switch" aria-label="Language selector">
+          <button class="language is-active" data-lang="en" type="button">
+            EN
+          </button>
+          <span>/</span>
+          <button class="language" data-lang="fr" type="button">FR</button>
+        </div>
+        <button
+          class="sound-toggle"
+          id="sound-toggle"
+          type="button"
+          aria-pressed="false"
+        >
+          <span class="sound-dot" aria-hidden="true"></span
+          ><span id="sound-label" data-i18n="soundOff">Sound</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="stage" id="stage">
+      <section
+        class="scene intro-scene is-active"
+        data-scene="0"
+        aria-labelledby="intro-title"
+      >
+        <div class="intro-veil"></div>
+        <div class="intro-inner">
+          <p class="eyebrow line-mark" data-i18n="introEyebrow">
+            — An exhibition in six pauses —
+          </p>
+          <h1 id="intro-title" data-i18n-html="introTitle">
+            Six <em>small signals</em><br />after the noise.
+          </h1>
+          <p class="intro-copy" data-i18n-html="introCopy">
+            Enter a room made for looking slowly.<br />Six original studies wait
+            in the low light.<br />Follow the glowing coordinates to unfold
+            their notes.
+          </p>
+          <button
+            class="pill-button enter-button"
+            id="enter"
+            type="button"
+            data-magnetic
+          >
+            <span data-i18n="enter">Enter the archive</span
+            ><i aria-hidden="true"></i>
+          </button>
+          <div class="intro-rule" aria-hidden="true">
+            <span></span><b></b><span></span>
+          </div>
+          <p class="intro-tip" data-i18n="introTip">
+            Six studies · five illuminated details in every room
+          </p>
+        </div>
+      </section>
+
+      <div id="work-scenes"></div>
+
+      <section
+        class="scene outro-scene"
+        data-scene="7"
+        aria-labelledby="outro-title"
+      >
+        <div class="outro-inner">
+          <p class="outro-line" id="outro-title" data-i18n-html="outroLine">
+            Take one <em>quiet thing</em><br />with you.
+          </p>
+          <p class="outro-sub" data-i18n="outroSub">— End of the archive —</p>
+          <blockquote class="outro-quote" id="outro-quote"></blockquote>
+          <button
+            class="pill-button restart-button"
+            id="restart"
+            type="button"
+            data-magnetic
+          >
+            <span data-i18n="restart">Begin again</span
+            ><i aria-hidden="true"></i>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="chrome chrome-bottom">
+      <nav class="progress" id="progress" aria-label="Exhibition rooms"></nav>
+      <p class="navigation-hint" id="navigation-hint">
+        <span class="key">←</span><span class="key">→</span
+        ><span data-i18n="navigate">to move through the rooms</span>
+      </p>
+    </footer>
+
+    <div class="mobile-navigation" aria-label="Slide navigation">
+      <button id="previous" type="button" aria-label="Previous room">‹</button>
+      <button id="next" type="button" aria-label="Next room">›</button>
+    </div>
+
+    <div class="side-panel-backdrop" id="panel-backdrop"></div>
+    <aside
+      class="side-panel"
+      id="side-panel"
+      aria-modal="true"
+      aria-label="Artwork notes"
+      aria-hidden="true"
+    >
+      <button
+        class="close-panel"
+        id="close-panel"
+        type="button"
+        aria-label="Close notes"
+      >
+        ×
+      </button>
+      <div id="panel-content"></div>
+      <div class="panel-footer">
+        <button class="panel-nav" id="panel-prev" type="button">
+          <span>←</span> <span data-i18n="previous">Previous</span>
+        </button>
+        <button class="panel-nav" id="panel-next" type="button">
+          <span data-i18n="next">Next</span> <span>→</span>
+        </button>
+      </div>
+      <p class="panel-count" id="panel-count"></p>
+    </aside>
+
+    <div class="scene-flash" id="scene-flash" aria-hidden="true">
+      <span></span>
+    </div>
+    <div class="scene-card" id="scene-card" aria-hidden="true">
+      <b></b><span></span><i></i>
+    </div>
+    <div class="progress-track" aria-hidden="true">
+      <span id="progress-bar"></span>
+    </div>
+
+    <div
+      class="loader"
+      id="loader"
+      role="status"
+      aria-label="Loading exhibition"
+    >
+      <div class="loader-rule"></div>
+      <div class="loader-word" aria-label="Nocturne">
+        <span>N</span><span>O</span><span>C</span><span>T</span><span>U</span
+        ><span>R</span><span>N</span><span>E</span>
+      </div>
+      <p>— The slow archive —</p>
+      <div class="loader-rule"></div>
+    </div>
+
+    <noscript
+      ><p class="noscript">
+        This exhibition needs JavaScript for its rooms and controls.
+      </p></noscript
+    >
+    <script src="app.js"></script>
+  </body>
+</html>
