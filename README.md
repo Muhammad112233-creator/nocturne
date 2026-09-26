@@ -125,15 +125,7 @@ These control most of the experience without hunting through the stylesheet.
 | Toggle sound           | Top-right sound control or `S` key                         |
 | Return to introduction | `Esc` or click the Nocturne wordmark                       |
 
-## Deployment checklist
 
-Before committing a final version, check:
-
-- [ ] `index.html` remains in the repository root, not inside another folder.
-- [ ] Every asset referenced in `app.js` is present in `assets/`.
-- [ ] Image filenames match exactly, including upper/lowercase letters.
-- [ ] GitHub Pages source is set to `main` and `/ (root)`.
-- [ ] You have tested the published GitHub Pages URL on both desktop and mobile.
 
 ## License note
 
