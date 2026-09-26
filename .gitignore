@@ -1,0 +1,25 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and temporary files
+*.log
+.tmp/
+tmp/
+.cache/
+
+# Dependency folders (not used by this static template, kept for future edits)
+node_modules/
+dist/
+build/
+
+# Environment files
+.env
+.env.*
+!.env.example
